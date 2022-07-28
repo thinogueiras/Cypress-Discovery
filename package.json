@@ -1,0 +1,27 @@
+{
+  "name": "cypressdiscovery",
+  "version": "1.0.0",
+  "description": "Cypress Discovery - QACademy",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "keywords": [
+    "Node.Js",
+    "Javascript",
+    "Cypress",
+    "Testing",
+    "AutomationTests",
+    "TestAutomation",
+    "e2e"
+  ],
+  "author": "Thiago Nogueira dos Santos",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
