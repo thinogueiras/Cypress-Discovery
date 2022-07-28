@@ -39,6 +39,8 @@
         "global-require": "off",
         "no-useless-escape": "off",
         "no-unused-expressions": "off",
-        "eqeqeq": "off"
+        "eqeqeq": "off",
+        "no-var": "off",
+        "object-shorthand": "off"        
     }
 }

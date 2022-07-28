@@ -3,8 +3,19 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
     projectId: 'apvuhf',
     e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
+        defaultCommandTimeout: 6000,
+        specPattern: 'cypress/e2e/*.cy.js',
+        reporter: 'mochawesome',
+        reporterOptions: {
+            reportDir: 'cypress/log',
+            overwrite: true,
+            html: true,
+            json: false,
         },
+        viewportWidth: 1440,
+        viewportHeight: 900,
+        baseUrl: 'https://buger-eats-qa.vercel.app',
+        video: false,
+        screenshotOnRunFailure: true,
     },
 });
