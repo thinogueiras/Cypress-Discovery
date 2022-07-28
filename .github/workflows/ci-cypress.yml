@@ -5,8 +5,6 @@ on: [push]
 jobs:
   ui-chrome-tests:
     runs-on: ubuntu-latest    
-    strategy:
-      fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -16,7 +14,7 @@ jobs:
         with:
           install-command: yarn install
           wait-on: ${{ secrets.BASE_URL_BUGER_EATS }}
-          wait-on-timeout: 120
+          wait-on-timeout: 60
           browser: chrome
           headless: true
           record: true
