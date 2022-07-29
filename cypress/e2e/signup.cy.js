@@ -4,6 +4,7 @@ import signupFactory from '../factories/SignupFactory';
 describe('Signup page', () => {
     beforeEach(() => {
         signup.go();
+        cy.url().should('include', '/deliver');
     });
 
     it('Should register user as deliver', () => {

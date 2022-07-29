@@ -1,4 +1,4 @@
-name: Cypress Regression Tests
+name: Cypress Tests
 
 on: [push]
 
@@ -14,7 +14,7 @@ jobs:
         with:
           install-command: yarn install
           wait-on: ${{ secrets.BASE_URL_BUGER_EATS }}
-          wait-on-timeout: 60
+          wait-on-timeout: 30
           browser: chrome
           headless: true
           record: true
