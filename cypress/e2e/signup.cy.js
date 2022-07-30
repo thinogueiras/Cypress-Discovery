@@ -1,14 +1,15 @@
 import signup from '../pages/SignupPage';
-import signupFactory from '../factories/SignupFactory';
+import signupFactory from '../functions/signupFactory';
 
 describe('Signup page', () => {
+    var deliver;
     beforeEach(() => {
+        deliver = signupFactory.deliver();
         signup.go();
         cy.url().should('include', '/deliver');
     });
 
     it('Should register user as deliver', () => {
-        var deliver = signupFactory.deliver();
         signup.fillForm(deliver);
         signup.clickDeliverVehicle(deliver.delivery_method);
         signup.uploadCnh(deliver.cnh);
@@ -24,7 +25,6 @@ describe('Signup page', () => {
     });
 
     it('Should validate invalid user CPF', () => {
-        var deliver = signupFactory.deliver();
         deliver.cpf = 'x0000000AA3';
         signup.fillForm(deliver);
         signup.clickDeliverVehicle(deliver.delivery_method);
@@ -34,7 +34,6 @@ describe('Signup page', () => {
     });
 
     it('Should validate invalid user E-mail', () => {
-        var deliver = signupFactory.deliver();
         deliver.email = 'user.com.br';
         signup.fillForm(deliver);
         signup.clickDeliverVehicle(deliver.delivery_method);
@@ -59,8 +58,8 @@ describe('Signup page', () => {
         });
 
         messages.forEach((msg) => {
-            it(`${msg.field} is required`, () => {
-                signup.alertMessageShouldBe(msg.output);
+            it(`${msg.field} is required`, async () => {
+                await signup.alertMessageShouldBe(msg.output);
             });
         });
     });

@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { generate } from 'gerador-validador-cpf';
 
 export default {
-    deliver: function () {
+    deliver: () => {
         var firstName = faker.name.firstName();
         var lastName = faker.name.lastName();
 
