@@ -22,7 +22,7 @@
   "author": "Thiago Nogueira dos Santos",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.3.1",
+    "cypress": "^10.6.0",
     "cypress-file-upload": "^5.0.8",
     "eslint": "^8.20.0",
     "eslint-config-airbnb-base": "^15.0.0",
