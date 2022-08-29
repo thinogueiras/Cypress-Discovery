@@ -6,7 +6,6 @@ describe('Signup page', () => {
     beforeEach(() => {
         deliver = signupFactory.deliver();
         signup.go();
-        cy.url().should('include', '/deliver');
     });
 
     it('Should register user as deliver', () => {
@@ -41,8 +40,15 @@ describe('Signup page', () => {
         signup.submit();
         signup.alertMessageShouldBe('Oops! Email com formato inválido.');
     });
+});
 
-    context('Required fields', () => {
+describe('Validate required fields', () => {
+    before(() => {
+        signup.go();
+        signup.submit();
+    });
+
+    context('Validate messages', () => {
         const messages = [
             { field: 'name', output: 'É necessário informar o nome' },
             { field: 'cpf', output: 'É necessário informar o CPF' },
@@ -52,10 +58,6 @@ describe('Signup page', () => {
             { field: 'delivery_method', output: 'Selecione o método de entrega' },
             { field: 'cnh', output: 'Adicione uma foto da sua CNH' },
         ];
-
-        beforeEach(() => {
-            signup.submit();
-        });
 
         messages.forEach((msg) => {
             it(`${msg.field} is required`, async () => {

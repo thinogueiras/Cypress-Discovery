@@ -3,6 +3,7 @@ class SignupPage {
         cy.visit('/');
         cy.get('a[href="/deliver"]').click();
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas');
+        cy.url().should('include', '/deliver');
     }
 
     fillForm(deliver) {
