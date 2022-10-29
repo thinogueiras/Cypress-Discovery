@@ -1,24 +1,31 @@
-name: Cypress Tests
+name: Cypress Regression Tests
 
-on: [push]
+on: 
+  push:
+      branches: [ master, main, develop]
+  pull_request:
+      branches: [ master, main, develop]
 
 jobs:
-  ui-chrome-tests:
-    runs-on: ubuntu-latest    
+  e2e-tests:
+    runs-on: ubuntu-latest
+    strategy:
+        fail-fast: false
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: 'UI Tests - Chrome'
+      - name: 'E2E Tests - Chrome'
         uses: cypress-io/github-action@v4.1.0
         with:
           install-command: yarn install
           wait-on: ${{ secrets.BASE_URL_BUGER_EATS }}
-          wait-on-timeout: 30
+          wait-on-timeout: 60
           browser: chrome
           headless: true
           record: true
-          group: 'UI - Chrome'
+          group: 'e2e - Chrome'
           spec: cypress/e2e/*.cy.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
