@@ -7,7 +7,7 @@ module.exports = defineConfig({
         specPattern: 'cypress/e2e/**/*.cy.js',
         viewportWidth: 1600,
         viewportHeight: 900,
-        baseUrl: '${{ secrets.BASE_URL_BUGER_EATS }}',
+        baseUrl: ${{ secrets.BASE_URL_BUGER_EATS }},
         vide: true,
     },
 });
