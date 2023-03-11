@@ -8,6 +8,6 @@ module.exports = defineConfig({
         viewportWidth: 1600,
         viewportHeight: 900,
         baseUrl: '${{ secrets.BASE_URL_BUGER_EATS }}',
-        video: true,
+        vide: true,
     },
 });
