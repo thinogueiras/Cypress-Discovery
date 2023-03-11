@@ -5,9 +5,9 @@ module.exports = defineConfig({
     e2e: {
         defaultCommandTimeout: 6000,
         specPattern: 'cypress/e2e/**/*.cy.js',
-        viewportWidth: 1440,
+        viewportWidth: 1600,
         viewportHeight: 900,
-        baseUrl: 'https://buger-eats-qa.vercel.app',
+        baseUrl: ${{ secrets.BASE_URL_BUGER_EATS }},
         video: true,
     },
 });
