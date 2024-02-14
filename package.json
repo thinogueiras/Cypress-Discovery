@@ -1,18 +1,17 @@
 {
   "name": "cypressdiscovery",
   "version": "1.0.0",
-  "description": "Cypress Discovery - QACademy",
+  "description": "Cypress Discovery",
   "main": "index.js",
   "scripts": {
     "cypress:open": "npx cypress open",
     "test": "npx cypress run",
-    "test:chrome": "cypress run --browser chrome",
-    "test:firefox": "cypress run --browser firefox",
-    "test:edge": "cypress run --browser edge"
+    "test:chrome": "cypress run --browser chrome --headed",
+    "test:firefox": "cypress run --browser firefox --headed"
   },
   "keywords": [
     "Node.Js",
-    "Javascript",
+    "JavaScript",
     "Cypress",
     "Testing",
     "AutomationTests",

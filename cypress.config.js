@@ -8,6 +8,6 @@ module.exports = defineConfig({
         viewportWidth: 1600,
         viewportHeight: 900,
         baseUrl: 'https://buger-eats-qa.vercel.app',
-        vide: true,
+        video: false,
     },
 });
