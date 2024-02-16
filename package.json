@@ -7,7 +7,9 @@
     "cypress:open": "npx cypress open",
     "test": "npx cypress run",
     "test:chrome": "cypress run --browser chrome --headed",
-    "test:firefox": "cypress run --browser firefox --headed"
+    "test:firefox": "cypress run --browser firefox --headed",
+    "test-spec:home": "cypress run --spec cypress/e2e/home.cy.js --browser chrome --headed",
+    "test-spec:signup": "cypress run --spec cypress/e2e/signup.cy.js --browser chrome --headed"
   },
   "keywords": [
     "Node.Js",

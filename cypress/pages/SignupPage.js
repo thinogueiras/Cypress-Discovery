@@ -21,6 +21,10 @@ class SignupPage {
         cy.get('.field input[name="city-uf"]').should('have.value', deliver.address.city_state);
     }
 
+    clickOnPostalCodeButton() {
+        cy.get('.field input[type="button"]').click();
+    }
+
     clickDeliverVehicle(vehicleType) {
         cy.contains('.delivery-method li', vehicleType).click();
     }
@@ -37,12 +41,12 @@ class SignupPage {
         cy.get('.swal2-container .swal2-html-container').should('have.text', expectMessage);
     }
 
-    modalCloseAndValidateMessage(elementButton) {
-        cy.get(elementButton).click();
+    alertMessageShouldBe(expectMessageAlertError) {
+        cy.get('span.alert-error').should('have.text', expectMessageAlertError).and('be.visible');
     }
 
-    alertMessageShouldBe(expectMessageAlertError) {
-        cy.contains('span.alert-error', expectMessageAlertError).should('be.visible');
+    alertMessageContains(expectMessageAlertError) {
+        cy.get('span.alert-error').contains(expectMessageAlertError).should('be.visible');
     }
 }
 
